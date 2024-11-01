@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
         cartSummary.querySelector(".total-price").textContent = `$${totalPrice}`;
         let totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
         cartSummary.querySelector(".total-quantity").textContent = `Productos (${totalQuantity})`;
-        document.querySelector(".cart-count").textContent = totalQuantity; // Actualiza el contador en la interfaz
     }
 
     // Event Listeners para incrementar, decrementar y eliminar productos
