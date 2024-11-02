@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="item-details">
                             <h5 class="item-name">${item.name}</h5>
                             <p class="item-description">${item.description}</p>
-                            <p class="item-price">Precio ${item.currency} ${item.cost}</p>
+                            <p class="item-price">Precio ${item.currency} ${item.price}</p>
                         </div>
                         <div class="item-controls">
                             <button class="btn-remove" data-index="${index}">🗑️</button>
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para actualizar el resumen del carrito
     function updateCartSummary() {
-        let totalPrice = cartItems.reduce((total, item) => total + item.cost * item.quantity, 0);
+        let totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
         cartSummary.querySelector(".total-price").textContent = `$${totalPrice}`;
         let totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
         cartSummary.querySelector(".total-quantity").textContent = `Productos (${totalQuantity})`;
