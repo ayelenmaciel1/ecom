@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     id: product.id,
                     name: product.name,
                     description: product.description,
-                    price: product.price,
+                    price: product.cost,
                     currency: product.currency,
                     image: product.images[0], // Imagen principal del producto
                     quantity: 1 // Inicializar cantidad en 1
