@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <h5 class="item-name">${item.name}</h5>
                             <p class="item-description">${item.description}</p>
                             <p class="item-price">Precio ${item.currency} ${item.price}</p>
+                            <span class="subtotal">Sub-Total: US$${subtotal}</span> <!-- Muestra el subtotal aquí -->
                     </div>
-                        </div>
                         <div class="item-controls">
                             <button class="btn-remove" data-index="${index}">🗑️</button>
                             <div class="quantity-controls">
@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <span class="quantity">${item.quantity}</span>
                                 <button class="btn-increase" data-index="${index}">+</button>
                             </div>
-                             <span class="subtotal">Subtotal: US$${subtotal}</span> <!-- Muestra el subtotal aquí -->
                         </div>
                     </div>`;
                 cartItemsContainer.insertAdjacentHTML("beforeend", cartItemHTML);
