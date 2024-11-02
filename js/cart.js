@@ -6,6 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let continueShoppingButton = document.querySelector(".btn-continue-shopping");
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+    // Asegurarse de que cada producto en cartItems tenga una descripción
+    cartItems = cartItems.map(item => ({
+        ...item,
+        description: item.description || "Descripción predeterminada"
+    }));
+
+    // Guardar el carrito actualizado en `localStorage`
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+    
     // Función para renderizar el carrito de productos
     function renderCart() {
         cartItemsContainer.innerHTML = ""; // Limpia los items previos
@@ -47,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para actualizar el resumen del carrito
     function updateCartSummary() {
         let totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-        cartSummary.querySelector(".total-price").textContent = `$${totalPrice}`;
+        cartSummary.querySelector(".total-price").textContent = `US$${totalPrice}`;
         let totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
         cartSummary.querySelector(".total-quantity").textContent = `Productos (${totalQuantity})`;
     }
