@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Renderiza cada item en el carrito
             cartItems.forEach((item, index) => {
+                let subtotal = item.price * item.quantity; // Calcula el subtotal
                 let cartItemHTML = `
                     <div class="cart-item">
                         <img src="${item.image}" alt="${item.name}" class="item-image">
@@ -35,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <h5 class="item-name">${item.name}</h5>
                             <p class="item-description">${item.description}</p>
                             <p class="item-price">Precio ${item.currency} ${item.price}</p>
+                            <p>Subtotal: <span class="subtotal">US$${subtotal}</span></p> <!-- Muestra el subtotal -->
+                    </div>
                         </div>
                         <div class="item-controls">
                             <button class="btn-remove" data-index="${index}">🗑️</button>
