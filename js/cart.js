@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <h5 class="item-name">${item.name}</h5>
                             <p class="item-description">${item.description}</p>
                             <p class="item-price">Precio ${item.currency} ${item.price}</p>
-                            <span class="subtotal">Sub-Total: US$${subtotal}</span> <!-- Muestra el subtotal aquí -->
+                            <span class="item-subtotal">Sub-Total: US$${subtotal}</span> <!-- Muestra el subtotal aquí -->
                     </div>
                         <div class="item-controls">
                             <button class="btn-remove" data-index="${index}">🗑️</button>
