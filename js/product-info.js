@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                 cartItems.push({
                     id: product.id,
                     name: product.name,
-                    price: product.cost,
+                    description: product.description,
+                    price: product.price,
                     currency: product.currency,
                     image: product.images[0], // Imagen principal del producto
                     quantity: 1 // Inicializar cantidad en 1
